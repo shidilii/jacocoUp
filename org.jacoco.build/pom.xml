@@ -88,7 +88,7 @@
     <module>../org.jacoco.core</module>
     <module>../org.jacoco.report</module>
 
-    <module>../jacoco</module>
+
   </modules>
 
   <scm>
