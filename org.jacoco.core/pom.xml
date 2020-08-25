@@ -18,7 +18,7 @@
     <version>0.8.4</version>
   </parent>
 
-  <artifactId>org.jacoco.core</artifactId>
+  <artifactId>jacococore</artifactId>
 
   <name>JaCoCo :: Core</name>
   <description>JaCoCo Core</description>
