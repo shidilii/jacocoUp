@@ -13,10 +13,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.jacoco</groupId>
-    <artifactId>org.jacoco.build</artifactId>
+    <groupId>com.shidili</groupId>
+    <artifactId>jacocoUp</artifactId>
     <version>0.8.4</version>
-    <relativePath>../org.jacoco.build</relativePath>
   </parent>
 
   <artifactId>org.jacoco.core</artifactId>
