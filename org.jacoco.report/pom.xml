@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.shidili</groupId>
     <artifactId>jacocoUp</artifactId>
-    <version>0.8.4</version>
+    <version>0.0.1</version>
   </parent>
 
   <artifactId>jacocoreport</artifactId>

@@ -14,10 +14,10 @@
 
   <groupId>com.shidili</groupId>
   <artifactId>jacocoUp</artifactId>
-  <version>0.8.4</version>
+  <version>0.0.1</version>
   <packaging>pom</packaging>
 
-  <name>JaCoCo</name>
+  <name>jacocoUp</name>
   <url>https://github.com/shidilii/jacocoUp.git</url>
   <modules>
     <!-- Order is important: org.jacoco.agent.rt embeds into org.jacoco.agent and JaCoCo Agent used during tests -->
