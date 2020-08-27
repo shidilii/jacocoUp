@@ -12,7 +12,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.shidili</groupId>
+  <groupId>com.github.shidili</groupId>
   <artifactId>jacocoUp</artifactId>
   <version>0.0.1</version>
   <packaging>pom</packaging>
@@ -24,12 +24,25 @@
     <module>org.jacoco.core</module>
     <module>org.jacoco.report</module>
   </modules>
-
+  <licenses>
+    <license>
+      <name>GNU General Public License version 3</name>
+      <url>https://opensource.org/licenses/GPL-3.0</url>
+    </license>
+  </licenses>
   <scm>
     <connection>scm:git:git://github.com/shidilii/jacocoUp.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/shidilii/jacocoUp.git</developerConnection>
     <url>https://github.com/shidilii/jacocoUp.git</url>
   </scm>
+  <developers>
+    <developer>
+      <id>sdl</id>
+      <name>shidili</name>
+      <email>dili_shi@163.com</email>
+      <url>https://github.com/shidilii/jacocoUp.git</url>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
