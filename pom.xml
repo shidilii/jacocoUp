@@ -14,10 +14,11 @@
 
   <groupId>com.github.shidilii</groupId>
   <artifactId>jacocoUp</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <packaging>pom</packaging>
 
   <name>jacocoUp</name>
+  <description>jacocoUp</description>
   <url>https://github.com/shidilii/jacocoUp.git</url>
   <modules>
     <!-- Order is important: org.jacoco.agent.rt embeds into org.jacoco.agent and JaCoCo Agent used during tests -->
@@ -77,12 +78,11 @@
   </properties>
   <profiles>
     <profile>
-      <id>default</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
+      <!-- 打包的 -P参数 -->
+      <id>release</id>
       <build>
         <plugins>
+          <!-- Source -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
@@ -96,10 +96,14 @@
               </execution>
             </executions>
           </plugin>
+          <!-- Javadoc -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>2.9.1</version>
+            <configuration>
+              <additionalparam>-Xdoclint:none</additionalparam>
+            </configuration>
             <executions>
               <execution>
                 <phase>package</phase>
@@ -109,6 +113,7 @@
               </execution>
             </executions>
           </plugin>
+          <!-- GPG  打包插件-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
@@ -125,17 +130,17 @@
         </plugins>
       </build>
       <distributionManagement>
-        <snapshotRepository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
         <repository>
           <id>ossrh</id>
           <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
       </distributionManagement>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
     </profile>
   </profiles>
+
   <dependencyManagement>
     <dependencies>
       <!-- Project dependencies -->
