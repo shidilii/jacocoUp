@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.github.shidilii</groupId>
+    <artifactId>jacocoexample</artifactId>
+    <version>0.8.4</version>
+    <name>jacocoexample</name>
+    <description>jacocoexample</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/
+        </sonatypeOssDistMgmtSnapshotsUrl>
+
+        <maven.build.timestamp.format>yyyyMMddhhmm</maven.build.timestamp.format>
+        <jacoco.home.url>http://www.jacoco.org/jacoco</jacoco.home.url>
+        <copyright.years>${project.inceptionYear}, 2019</copyright.years>
+
+        <bytecode.version>1.5</bytecode.version>
+        <maven.compiler.source>${bytecode.version}</maven.compiler.source>
+        <maven.compiler.target>${bytecode.version}</maven.compiler.target>
+
+        <jvm.args></jvm.args>
+        <argLine>${jvm.args}</argLine>
+
+        <!-- Dependencies versions -->
+        <asm.version>7.1</asm.version>
+        <ant.version>1.7.1</ant.version>
+        <args4j.version>2.0.28</args4j.version>
+        <junit.version>4.8.2</junit.version>
+
+        <!-- ================== -->
+        <!-- For SonarQube analysis -->
+        <!-- ================== -->
+        <sonar.jacoco.reportPath>../${project.artifactId}.test/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.surefire.reportsPath>../${project.artifactId}.test/target/surefire-reports/</sonar.surefire.reportsPath>
+
+        <!-- See http://jira.codehaus.org/browse/SONAR-2096 -->
+        <sonar.java.source>1.5</sonar.java.source>
+        <sonar.java.target>1.5</sonar.java.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-test</artifactId>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>3.19.0</version>
+        </dependency>
+        <!--git操作-->
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>5.5.0.201909110433-r</version>
+        </dependency>
+
+
+                <dependency>
+                    <groupId>com.shidili</groupId>
+                    <artifactId>jacococore</artifactId>
+                    <version>1.0.0-SNAPSHOT</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.shidili</groupId>
+                    <artifactId>jacocoreport</artifactId>
+                    <version>1.0.0-SNAPSHOT</version>
+                </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.github.shidilii</groupId>-->
+<!--            <artifactId>jacocoreport</artifactId>-->
+<!--            <version>0.0.2</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-analysis</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>${ant.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-junit</artifactId>
+            <version>${ant.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-antunit</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>args4j</groupId>
+            <artifactId>args4j</artifactId>
+            <version>${args4j.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

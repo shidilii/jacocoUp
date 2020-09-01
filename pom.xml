@@ -22,8 +22,9 @@
   <url>https://github.com/shidilii/jacocoUp.git</url>
   <modules>
     <!-- Order is important: org.jacoco.agent.rt embeds into org.jacoco.agent and JaCoCo Agent used during tests -->
-    <module>org.jacoco.core</module>
-    <module>org.jacoco.report</module>
+    <module>jacococore</module>
+    <module>jacocoreport</module>
+    <module>jacocoexample</module>
   </modules>
   <licenses>
     <license>
