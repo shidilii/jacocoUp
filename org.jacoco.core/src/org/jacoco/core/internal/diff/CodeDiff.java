@@ -51,25 +51,23 @@ public class CodeDiff {
     }
     private static List<ClassInfo> diffMethods(String gitPath, String newBranchName, String oldBranchName) {
         try {
-            //  获取本地分支
             GitAdapter gitAdapter = new GitAdapter(gitPath);
             Git git = gitAdapter.getGit();
-            Ref localBranchRef = gitAdapter.getRepository().exactRef(REF_HEADS + newBranchName);
-            Ref localMasterRef = gitAdapter.getRepository().exactRef(REF_HEADS + oldBranchName);
-            //  更新本地分支
+            Ref localBranchRef = gitAdapter.getRepository().exactRef("refs/heads/" + newBranchName);
+            Ref localMasterRef = gitAdapter.getRepository().exactRef("refs/heads/" + oldBranchName);
+            gitAdapter.checkOutAndPull(localMasterRef, oldBranchName);
+            localMasterRef = gitAdapter.getRepository().exactRef("refs/heads/" + oldBranchName);
             gitAdapter.checkOutAndPull(localMasterRef, oldBranchName);
             gitAdapter.checkOutAndPull(localBranchRef, newBranchName);
-            //  获取分支信息
             AbstractTreeIterator newTreeParser = gitAdapter.prepareTreeParser(localBranchRef);
             AbstractTreeIterator oldTreeParser = gitAdapter.prepareTreeParser(localMasterRef);
-            //  对比差异
             List<DiffEntry> diffs = git.diff().setOldTree(oldTreeParser).setNewTree(newTreeParser).setShowNameAndStatusOnly(true).call();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             DiffFormatter df = new DiffFormatter(out);
-            //设置比较器为忽略空白字符对比（Ignores all whitespace）
             df.setDiffComparator(RawTextComparator.WS_IGNORE_ALL);
             df.setRepository(git.getRepository());
             List<ClassInfo> allClassInfos = batchPrepareDiffMethod(gitAdapter, newBranchName, oldBranchName, df, diffs);
+            git.close();
             return allClassInfos;
         }catch (Exception e) {
             e.printStackTrace();

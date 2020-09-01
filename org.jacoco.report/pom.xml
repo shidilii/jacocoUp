@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.github.shidilii</groupId>
     <artifactId>jacocoUp</artifactId>
-    <version>0.0.2</version>
+    <version>0.8.4</version>
   </parent>
 
   <artifactId>jacocoreport</artifactId>
