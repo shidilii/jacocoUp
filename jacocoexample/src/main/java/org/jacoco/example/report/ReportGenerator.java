@@ -132,7 +132,7 @@ public class ReportGenerator {
 	private IBundleCoverage analyzeStructure() throws IOException {
 
 		//git登录授权
-		GitAdapter.setCredentialsProvider("dili_shi@163.com", "s18942409712*");
+		GitAdapter.setCredentialsProvider("dili_shi@163.com", "******");
 		//全量覆盖
 //		final CoverageBuilder coverageBuilder = new CoverageBuilder();
 
