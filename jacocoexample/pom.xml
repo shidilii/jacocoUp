@@ -73,23 +73,23 @@
         </dependency>
 
 
-                <dependency>
-                    <groupId>com.shidili</groupId>
-                    <artifactId>jacococore</artifactId>
-                    <version>1.0.0-SNAPSHOT</version>
-                </dependency>
+<!--                <dependency>-->
+<!--                    <groupId>com.shidili</groupId>-->
+<!--                    <artifactId>jacococore</artifactId>-->
+<!--                    <version>1.0.0-SNAPSHOT</version>-->
+<!--                </dependency>-->
 
-                <dependency>
-                    <groupId>com.shidili</groupId>
-                    <artifactId>jacocoreport</artifactId>
-                    <version>1.0.0-SNAPSHOT</version>
-                </dependency>
+<!--                <dependency>-->
+<!--                    <groupId>com.shidili</groupId>-->
+<!--                    <artifactId>jacocoreport</artifactId>-->
+<!--                    <version>1.0.0-SNAPSHOT</version>-->
+<!--                </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>com.github.shidilii</groupId>-->
-<!--            <artifactId>jacocoreport</artifactId>-->
-<!--            <version>0.0.2</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.shidilii</groupId>
+            <artifactId>jacocoreport</artifactId>
+            <version>0.0.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.ow2.asm</groupId>
@@ -141,27 +141,17 @@
     </dependencies>
 
     <build>
-
         <plugins>
             <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>manifest</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
                 <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
