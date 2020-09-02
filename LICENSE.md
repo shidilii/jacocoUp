@@ -1,4 +1,4 @@
-此功能主要是基于jacoco0.8.4增加了git分支对比，欢迎大家一起提pr改进
+此功能主要是基于jacoco0.8.4增加了git分支对比，欢迎大家一起提pr改进，欢迎大家关注本项目，谢谢
 使用此功能注意事项如下：
 1、对于要监控代码覆盖率的jar包启动方式增加监听，启动方式如下（注意D:\bgy_idea\jacocolib下面要有官网的的jacocoagent.jar）
 java -javaagent:D:\bgy_idea\jacocolib\jacocoagent.jar=output=tcpserver,port=18089,append=true,address=127.0.0.1,includes=com.shidili.demo.* -jar D:\bgy-git\demo\target\demo-0.0.1.jar 
