@@ -145,11 +145,9 @@ public class ReportGenerator {
 //		final CoverageBuilder coverageBuilder = new CoverageBuilder(gitPath,"uat","v9","v8");
 
 
-		if(coverageBuilder.getClasses()!=null && coverageBuilder.getClasses().size()>0){
+		if(CoverageBuilder.classInfos!=null && CoverageBuilder.classInfos.size()>0){
 			final Analyzer analyzer = new Analyzer(execFileLoader.getExecutionDataStore(), coverageBuilder);
-
 			analyzer.analyzeAll(classesDirectory);
-
 			return coverageBuilder.getBundle(title);
 		}else{
 			//old和new分支一模一样情况，不生成任何代码
