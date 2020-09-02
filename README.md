@@ -13,6 +13,10 @@ srcPath=/src/main/java  --java路径
 remoteBranch=https://github.com/shidilii/demo.git --监控项目的git地址
 pullbat=C://jaco-exec//pull2.bat --拉取项目的bat文件
 
+
+ReportGenerator的git授权代码记得自己改下用户名和密码：GitAdapter.setCredentialsProvider("dili_shi@163.com", "******");
+
+
 3、注意跑监控服务的服务器和jacoco服务器是一致的，要么都是windows，要么都是linux，否则可能因为不同服务器编译不一致，导致某一些代码覆盖率是错误的
 
 4、整个项目运行过程
