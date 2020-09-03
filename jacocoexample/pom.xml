@@ -88,7 +88,7 @@
         <dependency>
             <groupId>com.github.shidilii</groupId>
             <artifactId>jacocoreport</artifactId>
-            <version>0.0.2</version>
+            <version>0.8.4</version>
         </dependency>
 
         <dependency>
