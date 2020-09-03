@@ -30,7 +30,9 @@ ReportGenerator的git授权代码记得自己改下用户名和密码：GitAdapt
 3、注意跑监控服务的服务器和jacoco服务器是一致的，要么都是windows，要么都是linux，否则可能因为不同服务器编译不一致，导致某一些代码覆盖率是错误的
 
 4、整个项目运行过程
+
 a、服务器上跑demo服务，记得增加agent
+
 b、手动执行代码覆盖率接口,浏览器输入这个地址即可，http://localhost:18090/jacoco/generateReporte
 
 
