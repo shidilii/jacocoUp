@@ -5,18 +5,24 @@ java -javaagent:D:\bgy_idea\jacocolib\jacocoagent.jar=output=tcpserver,port=1808
 address=127.0.0.1,includes=com.shidili.demo.* -jar D:\bgy-git\demo\target\demo-0.0.1.jar 
 
 
-2、项目配置属性描述
+2、项目配置属性描述 
 allExecPath=C://jaco-exec   --存放合并后的dump文件
+
 execPath=C://jaco-exec//execfiles  --每次生成的dump文件
+
 jacocoipadress=localhost --需要监控覆盖率的服务器ip，记得必须是ip
+
 jacocoport=18089  --监控端口
+
 projectPath=C://jaco-exec//demo   --监控的项目，需要用git拉取这个监控的项目，并切换分支为需要监控的，比如release
+
 classDirectory=/target  --项目的class文件，gradle是build
+
 srcPath=/src/main/java  --java路径
+
 remoteBranch=https://github.com/shidilii/demo.git --监控项目的git地址
+
 pullbat=C://jaco-exec//pull2.bat --拉取项目的bat文件
-
-
 
 ReportGenerator的git授权代码记得自己改下用户名和密码：GitAdapter.setCredentialsProvider("dili_shi@163.com", "******");
 
