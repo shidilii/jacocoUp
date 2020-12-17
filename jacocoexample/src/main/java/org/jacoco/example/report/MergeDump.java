@@ -67,15 +67,15 @@ public class MergeDump {
      */
     public void load(final ExecFileLoader loader) throws Exception {
         for (final File fileSet : fileSets(execPath)) {
-            System.out.println(fileSet.getAbsoluteFile());
+            // System.out.println(fileSet.getAbsoluteFile());
             final File inputFile = new File(this.execPath, fileSet.getName());
             if (inputFile.isDirectory()) {
                 continue;
             }
             try {
-                System.out.println("Loading execution data file " + inputFile.getAbsolutePath());
+//                System.out.println("Loading execution data file " + inputFile.getAbsolutePath());
                 loader.load(inputFile);
-                System.out.println(loader.getExecutionDataStore().getContents());
+                // System.out.println(loader.getExecutionDataStore().getContents());
             } catch (final IOException e) {
 
             }
