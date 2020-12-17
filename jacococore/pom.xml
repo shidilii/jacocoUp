@@ -51,6 +51,33 @@
   </dependencies>
 
   <build>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>**/*.java</exclude>
+          <exclude>**/*.kt</exclude>
+          <exclude>**/*.groovy</exclude>
+          <exclude>**/*.properties</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>.</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>about.html</include>
+        </includes>
+      </resource>
+    </resources>
+
     <sourceDirectory>src</sourceDirectory>
 
     <plugins>
